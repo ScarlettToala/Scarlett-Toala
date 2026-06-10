@@ -16,10 +16,15 @@
 }
 
 * {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0px;
-    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+h1, h2, h3, .proyecto-titulo, .experiencia-puesto {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 body {
@@ -75,7 +80,7 @@ nav a:hover {
 }
 
 .hero {
-    margin: 100px;
+    margin: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,7 +354,8 @@ section {
 
 /* Secondary: descargar (accent) */
 .btn-secondary {
-    background: var(--accent-600);
+    background:
+        var(--primary);
     color: #1f2937;
     border-color: rgba(0, 0, 0, 0.06);
 }
@@ -414,16 +420,94 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
     gap: 1.5rem;
     justify-items: center;
-    
 }
 
+#skills{
+    position:relative;
+}
 
+#skills::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(255,105,180,.08),
+        transparent 40%
+    ),
+    radial-gradient(
+        circle at bottom right,
+        rgba(168,85,247,.08),
+        transparent 40%
+    );
+
+    pointer-events:none;
+}
+
+.skills-subtitle{
+    text-align:center;
+    color:var(--text-secondary);
+    margin-bottom:2rem;
+}
+
+.skills-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(140px,1fr));
+
+    gap:1.2rem;
+}
+
+.skill-card{
+    background:rgba(255, 146, 209, 0.2);
+
+    border:1px solid rgba(255,105,180,.15);
+
+    border-radius:18px;
+
+    padding:1.5rem 1rem;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s ease;
+}
+
+.skill-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+    0 0 25px rgba(255,105,180,.18),
+    0 0 40px rgba(168,85,247,.12);
+}
+
+.skill-card span{
+    margin-top:1rem;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    color:white;
+}
 
 .icon {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-    transition: transform 0.25s ease;
+  width:60px;
+    height:60px;
+    object-fit:contain;
+    transition:.3s;
+}
+
+.skill-card:hover .icon{
+    transform:scale(1.12);
 }
 
 .icon:hover {
@@ -462,11 +546,96 @@ body::before{
     z-index:-1;
 }
 
+/*=== Experiencia Laboral ===*/
+
+.experiencia-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experiencia-item {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 105, 180, 0.2); /* Borde rosa sutil como sobre-mi */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experiencia-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 0 30px rgba(255, 105, 180, 0.15),
+        0 0 50px rgba(168, 85, 247, 0.1); /* Efecto hover neon de los proyectos */
+}
+
+.experiencia-puesto {
+    font-size: 1.5rem;
+    color: var(--primary); /* Rosa dominante */
+    margin-bottom: 0.5rem;
+}
+
+.experiencia-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.75rem;
+}
+
+.experiencia-meta strong {
+    color: var(--secondary-light); /* Morado claro para resaltar etiquetas */
+}
+
+.experiencia-lista {
+    list-style: none; /* Quitamos los puntos por defecto para personalizarlos */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.experiencia-lista li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e5e7eb;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Viñetas personalizadas con estilo neon */
+.experiencia-lista li::before {
+    content: "•";
+    color: var(--accent); /* Punto morado brillante */
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Ajuste Responsivo para Móviles */
+@media (max-width: 600px) {
+    .experiencia-item {
+        padding: 1.25rem;
+    }
+    
+    .experiencia-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
 footer{
     text-align:center;
     padding:2rem;
     color:var(--text-secondary);
 }
+
 
 /* Responsividad */
 @media (max-width: 900px) {
@@ -512,9 +681,13 @@ footer{
 
 /*Móvil*/
 @media (max-width: 520px) {
+    #contacto .btn {
+        width: 90%;
+    }
 
     .menu-toggle {
         display: block;
+        color: var(--primary);
     }
 
     nav {
@@ -530,7 +703,7 @@ footer{
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(255, 236, 96, 0.777);
+        background: rgba(32, 32, 32, 0.777);
         display: none;             
         flex-direction: column;
         align-items: center;
@@ -553,6 +726,10 @@ footer{
         padding: 0.5rem 0;
         display: block;
         width: 100%;
+    }
+
+    nav a:hover {
+        color: var(--secondary);
     }
 
     #sobre-mi p {
