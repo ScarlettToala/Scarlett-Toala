@@ -16,6 +16,7 @@
 }
 
 * {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -158,6 +159,15 @@ section {
     flex-direction: column;
     gap: 0.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mejora la transición del hover en las tarjetas */
+.proyecto,
+.experiencia-item,
+.skill-card {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.4s ease,
+                border-color 0.3s ease;
 }
 
 .proyecto:hover {
@@ -583,12 +593,25 @@ section {
 
 /* Botón hamburguesa */
 .menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
+      display: none;
+    font-size: 2rem;
+    background: rgba(255, 105, 180, 0.15);
+    border: 1px solid rgba(255, 105, 180, 0.3);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
     cursor: pointer;
-    color: #000;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 105, 180, 0.25);
+    transform: scale(1.05);
+}
+
+.menu-toggle.active {
+    background: var(--primary);
+    color: white;
 }
 
 body::before {
@@ -704,6 +727,35 @@ body::before {
         0 8px 18px rgba(0,0,0,.35);
 }
 
+/* Información adicional oculta */
+.experience-more {
+    display: none;
+}
+
+/* Cuando la experiencia está abierta */
+.experience-card.active .experience-more {
+    display: block;
+}
+
+/* Botón Ver más */
+.experience-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+
+    color: var(--secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.experience-toggle:hover {
+    text-decoration: underline;
+}
+
+
 
 /* Ajuste Responsivo para Móviles */
 @media (max-width: 600px) {
@@ -721,6 +773,35 @@ footer {
     text-align: center;
     padding: 2rem;
     color: var(--text-secondary);
+}
+
+/* Personalizar scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary), var(--accent));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+} 
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -801,6 +882,7 @@ footer {
 
     .nav-menu.active {
         display: flex;
+        animation: slideDown 0.3s ease forwards;
     }
 
     .nav-menu li {
