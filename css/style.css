@@ -434,7 +434,7 @@ section {
 }
 
 .experience-card.active .experience-more {
-    display: block;
+    display: inline-block;
 }
 
 

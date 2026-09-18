@@ -75,6 +75,10 @@ const experienceButtons = document.querySelectorAll(".experience-toggle");
 experienceButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const card = button.closest(".experiencia-item");
+
+        // Guardamos la posición actual de la tarjeta
+        const cardTop = card.getBoundingClientRect().top + window.scrollY;
+
         const moreItems = card.querySelectorAll(".experience-more");
 
         const isOpen = card.classList.toggle("active");
@@ -83,9 +87,10 @@ experienceButtons.forEach((button) => {
             item.style.display = isOpen ? "list-item" : "none";
         });
 
-        button.textContent = isOpen
-            ? "Ver menos ↑"
-            : "Ver más ↓";
-    });
+        button.innerHTML = isOpen
+            ? "Ver menos <i class='fa-solid fa-arrow-up-long'></i>"
+            : "Ver más <i class='fa-solid fa-arrow-down-long'></i>";
+    
+        });
 });
 
