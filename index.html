@@ -5,42 +5,50 @@
     <meta charset="UTF-8">
     <title>Portfolio | Scarlett Toala</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Portfolio de Scarlett Toala, desarrolladora web Full Stack junior: proyectos con React, Vue, Node.js y PHP.">
+    <meta name="theme-color" content="#0a0a0c">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
     <script src="js/main.js" defer></script>
-    <script src="https://kit.fontawesome.com/52e9444a33.js" crossorigin="anonymous"></script>
-
-    
+    <script src="https://kit.fontawesome.com/52e9444a33.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
 
     <header id="inicio" class="hero-section">
 
-        <nav>
-            <button class="menu-toggle" aria-label="Abrir menú">
+        <nav aria-label="Navegación principal">
+            <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="menu-principal">
                 ☰
             </button>
 
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="menu-principal">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#experiencia-laboral">Experiencia</a></li>
+                <li><a href="#skills">Stack</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li><a href="#curriculum">Currículum</a></li>
             </ul>
         </nav>
+
         <div class="hero">
-            <img src="src/img/FotoScarlett.jpg" alt="Foto de Scarlett Toala" class="foto-perfil">
+            <img src="src/img/FotoScarlett.jpg" alt="Foto de Scarlett Toala" class="foto-perfil" width="150"
+                height="150">
 
             <h1><span class="highlight">Desarrolladora Web Full Stack</span> Junior</h1>
             <p>Especializada en crear aplicaciones web modernas con React, Vue, Node.js y PHP. Me apasiona desarrollar
                 interfaces intuitivas y seguir aprendiendo nuevas tecnologías.</p>
 
             <div class="btn-container">
-                <a href="#proyectos" class="btn-inicio"><i class="fa-regular fa-eye"></i>Ver Proyectos</a>
+                <a href="#proyectos" class="btn-inicio"><i class="fa-regular fa-eye" aria-hidden="true"></i> Ver
+                    Proyectos</a>
 
-                <a href="src/CV-ScarlettToala.pdf" class="btn-inicio" download><i class="fa-solid fa-arrow-down-long"></i>
+                <a href="src/CV-ScarlettToala.pdf" class="btn-inicio" download><i
+                        class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>
                     Descargar CV
                 </a>
             </div>
@@ -48,503 +56,519 @@
         </div>
     </header>
 
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>
-            Soy desarrolladora de aplicaciones web recién graduada, apasionada por el desarrollo frontend y la creación
-            de experiencias web intuitivas. Durante mi formación y prácticas he trabajado con distintas tecnologías y
-            herramientas del ecosistema web, además de desarrollar proyectos personales para seguir aprendiendo y
-            mejorando mis habilidades. Actualmente busco una oportunidad profesional como desarrolladora web para seguir
-            creciendo hacia un perfil Full Stack.
-        </p>
-    </section>
+    <main>
 
-    <section id="experiencia-laboral">
-        <h2>Experiencia laboral</h2>
+        <section id="sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy desarrolladora de aplicaciones web recién graduada, apasionada por el desarrollo frontend y la
+                creación de experiencias web intuitivas. Durante mi formación y prácticas he trabajado con distintas
+                tecnologías y herramientas del ecosistema web, además de desarrollar proyectos personales para seguir
+                aprendiendo y mejorando mis habilidades. Actualmente busco una oportunidad profesional como
+                desarrolladora web para seguir creciendo hacia un perfil Full Stack.
+            </p>
+        </section>
 
-        <!-- WORDPRESS -->
-        <div class="experiencia-contenedor">
-            <div class="experiencia-item">
-                <h3 class="experiencia-puesto">
-                    Desarrolladora Web - WordPress
-                </h3>
+        <section id="experiencia-laboral">
+            <h2>Experiencia laboral</h2>
 
-                <div class="experiencia-meta">
-                    <span class="empresa">
-                        <strong>Empresa:</strong> Accesos Nordeste
-                    </span>
+            <!-- WORDPRESS -->
+            <div class="experiencia-contenedor">
+                <div class="experiencia-item">
+                    <h3 class="experiencia-puesto">
+                        Desarrolladora Web - WordPress
+                    </h3>
 
-                    <span class="duracion">
-                        <strong>Duración:</strong> Febrero - Junio 2026
-                    </span>
+                    <div class="experiencia-meta">
+                        <span class="empresa">
+                            <strong>Empresa:</strong> Accesos Nordeste
+                        </span>
+
+                        <span class="duracion">
+                            <strong>Duración:</strong> Febrero - Junio 2026
+                        </span>
+                    </div>
+
+                    <ul class="experiencia-lista">
+                        <li>
+                            Diseño y desarrollo de sitios web utilizando WordPress
+                            y Elementor, creando páginas funcionales y adaptadas a
+                            distintos objetivos.
+                        </li>
+
+                        <li>
+                            Optimización del rendimiento web, mejorando la velocidad
+                            de carga mediante herramientas como compresión de imágenes
+                            y análisis con PageSpeed Insights.
+                        </li>
+
+                        <li>
+                            Mejora de seguridad y responsividad, asegurando que las
+                            webs fueran seguras y se adaptaran correctamente a móviles,
+                            tablets y escritorio.
+                        </li>
+
+                        <!-- CONTENIDO OCULTO -->
+                        <li class="experience-more">
+                            Implementación de funcionalidades y formularios,
+                            configurando sistemas de contacto, captación de datos
+                            y otras integraciones personalizadas.
+                        </li>
+
+                        <li class="experience-more">
+                            Instalación y gestión de plugins, trabajando con
+                            herramientas como Rank Math SEO, plugins de optimización
+                            de imágenes, seguridad y envío seguro de emails.
+                        </li>
+
+                        <li class="experience-more">
+                            SEO y posicionamiento web, aprendiendo a utilizar
+                            herramientas y técnicas para mejorar el ranking en Google,
+                            incluyendo análisis de palabras clave y optimización
+                            de contenido.
+                        </li>
+
+                        <li class="experience-more">
+                            Creación de contenido, especialmente blogs, aplicando
+                            estrategias básicas de SEO para mejorar la visibilidad
+                            de las páginas.
+                        </li>
+                    </ul>
+
+                    <button class="experience-toggle" type="button">
+                        Ver más <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- IKEA -->
+            <div class="experiencia-contenedor">
+                <div class="experiencia-item">
+                    <h3 class="experiencia-puesto">
+                        Atención al Cliente
+                    </h3>
+
+                    <div class="experiencia-meta">
+                        <span class="empresa">
+                            <strong>Empresa:</strong> IKEA S.A.
+                        </span>
+
+                        <span class="duracion">
+                            <strong>Duración:</strong> Junio 2024 - Septiembre 2025
+                        </span>
+                    </div>
+
+                    <ul class="experiencia-lista">
+                        <li>
+                            Atención al cliente en punto de venta, garantizando una
+                            experiencia de compra positiva y resolviendo incidencias
+                            de forma eficiente.
+                        </li>
+
+                        <li>
+                            Gestión de caja y soporte en operaciones diarias,
+                            incluyendo cobros, arqueos y apoyo en momentos de
+                            alta afluencia.
+                        </li>
+
+                        <!-- CONTENIDO OCULTO -->
+                        <li class="experience-more">
+                            Rotación por diferentes áreas del departamento,
+                            adaptándome a distintas funciones según las necesidades
+                            del equipo.
+                        </li>
+
+                        <li class="experience-more">
+                            Apoyo en aperturas y cierres de tienda, asegurando el
+                            correcto funcionamiento operativo en cada turno.
+                        </li>
+
+                        <li class="experience-more">
+                            Reposición de productos y control de stock, manteniendo
+                            la disponibilidad y presentación adecuada de los artículos.
+                        </li>
+
+                        <li class="experience-more">
+                            Formación y apoyo a nuevos empleados, colaborando en
+                            su integración y aprendizaje de los procedimientos internos.
+                        </li>
+
+                        <li class="experience-more">
+                            Soporte a otros departamentos y trabajo en equipo,
+                            colaborando de manera transversal para asegurar el buen
+                            funcionamiento del área.
+                        </li>
+                    </ul>
+
+                    <button class="experience-toggle" type="button">
+                        Ver más <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- EL CORTE INGLÉS -->
+            <div class="experiencia-contenedor">
+                <div class="experiencia-item">
+                    <h3 class="experiencia-puesto">
+                        Atención al Cliente
+                    </h3>
+
+                    <div class="experiencia-meta">
+                        <span class="empresa">
+                            <strong>Empresa:</strong> El Corte Inglés
+                        </span>
+
+                        <span class="duracion">
+                            <strong>Duración:</strong> Diciembre 2023 - Enero 2024
+                        </span>
+                    </div>
+
+                    <ul class="experiencia-lista">
+                        <li>
+                            Atención en caja durante campaña navideña, gestionando
+                            un alto volumen de clientes en periodos de máxima afluencia.
+                        </li>
+
+                        <li>
+                            Cobro de productos en caja, incluyendo pagos en efectivo,
+                            tarjeta y bonos o sistemas de pago especiales.
+                        </li>
+
+                        <!-- CONTENIDO OCULTO -->
+                        <li class="experience-more">
+                            Gestión de promociones y apoyo en venta cruzada,
+                            informando a los clientes sobre ofertas y productos
+                            destacados.
+                        </li>
+
+                        <li class="experience-more">
+                            Arqueo de caja y control de efectivo, realizando cierres,
+                            comprobación de saldos y solicitud de reposición de
+                            efectivo cuando era necesario.
+                        </li>
+
+                        <li class="experience-more">
+                            Soporte en diferentes secciones del centro, colaborando
+                            en tareas operativas según las necesidades del equipo.
+                        </li>
+
+                        <li class="experience-more">
+                            Organización y preparación de datos y operativa interna,
+                            asegurando el correcto flujo de información y apoyo
+                            administrativo básico.
+                        </li>
+                    </ul>
+
+                    <button class="experience-toggle" type="button">
+                        Ver más <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="skills">
+            <h2>Stack Tecnológico</h2>
+
+            <p class="skills-subtitle">
+                Tecnologías y herramientas con las que desarrollo aplicaciones web modernas.
+            </p>
+
+            <!-- Lenguajes -->
+            <h3 class="skills-category">Lenguajes de programación</h3>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <img src="src/img/html-5.webp" class="icon" alt="" loading="lazy">
+                    <span>HTML5</span>
                 </div>
 
-                <ul class="experiencia-lista">
-                    <li>
-                        Diseño y desarrollo de sitios web utilizando WordPress
-                        y Elementor, creando páginas funcionales y adaptadas a
-                        distintos objetivos.
-                    </li>
-
-                    <li>
-                        Optimización del rendimiento web, mejorando la velocidad
-                        de carga mediante herramientas como compresión de imágenes
-                        y análisis con PageSpeed Insights.
-                    </li>
-
-                    <li>
-                        Mejora de seguridad y responsividad, asegurando que las
-                        webs fueran seguras y se adaptaran correctamente a móviles,
-                        tablets y escritorio.
-                    </li>
-
-                    <!-- CONTENIDO OCULTO -->
-                    <li class="experience-more">
-                        Implementación de funcionalidades y formularios,
-                        configurando sistemas de contacto, captación de datos
-                        y otras integraciones personalizadas.
-                    </li>
-
-                    <li class="experience-more">
-                        Instalación y gestión de plugins, trabajando con
-                        herramientas como Rank Math SEO, plugins de optimización
-                        de imágenes, seguridad y envío seguro de emails.
-                    </li>
-
-                    <li class="experience-more">
-                        SEO y posicionamiento web, aprendiendo a utilizar
-                        herramientas y técnicas para mejorar el ranking en Google,
-                        incluyendo análisis de palabras clave y optimización
-                        de contenido.
-                    </li>
-
-                    <li class="experience-more">
-                        Creación de contenido, especialmente blogs, aplicando
-                        estrategias básicas de SEO para mejorar la visibilidad
-                        de las páginas.
-                    </li>
-                </ul>
-
-                <button class="experience-toggle" type="button">
-                    Ver más <i class="fa-solid fa-arrow-down-long"></i>
-                </button>
-            </div>
-        </div>
-
-
-        <!-- IKEA -->
-        <div class="experiencia-contenedor">
-            <div class="experiencia-item">
-                <h3 class="experiencia-puesto">
-                    Atención al Cliente
-                </h3>
-
-                <div class="experiencia-meta">
-                    <span class="empresa">
-                        <strong>Empresa:</strong> IKEA S.A.
-                    </span>
-
-                    <span class="duracion">
-                        <strong>Duración:</strong> Junio 2024 - Septiembre 2025
-                    </span>
+                <div class="skill-card">
+                    <img src="src/img/CSS.webp" class="icon" alt="" loading="lazy">
+                    <span>CSS3</span>
                 </div>
 
-                <ul class="experiencia-lista">
-                    <li>
-                        Atención al cliente en punto de venta, garantizando una
-                        experiencia de compra positiva y resolviendo incidencias
-                        de forma eficiente.
-                    </li>
-
-                    <li>
-                        Gestión de caja y soporte en operaciones diarias,
-                        incluyendo cobros, arqueos y apoyo en momentos de
-                        alta afluencia.
-                    </li>
-
-                    <li class="experience-more" >
-                        Rotación por diferentes áreas del departamento,
-                        adaptándome a distintas funciones según las necesidades
-                        del equipo.
-                    </li>
-
-                    <!-- CONTENIDO OCULTO -->
-                    <li class="experience-more">
-                        Apoyo en aperturas y cierres de tienda, asegurando el
-                        correcto funcionamiento operativo en cada turno.
-                    </li>
-
-                    <li class="experience-more">
-                        Reposición de productos y control de stock, manteniendo
-                        la disponibilidad y presentación adecuada de los artículos.
-                    </li>
-
-                    <li class="experience-more">
-                        Formación y apoyo a nuevos empleados, colaborando en
-                        su integración y aprendizaje de los procedimientos internos.
-                    </li>
-
-                    <li class="experience-more">
-                        Soporte a otros departamentos y trabajo en equipo,
-                        colaborando de manera transversal para asegurar el buen
-                        funcionamiento del área.
-                    </li>
-                </ul>
-
-                <button class="experience-toggle" type="button">
-                    Ver más <i class="fa-solid fa-arrow-down-long"></i>
-                </button>
-            </div>
-        </div>
-
-
-        <!-- EL CORTE INGLÉS -->
-        <div class="experiencia-contenedor">
-            <div class="experiencia-item">
-                <h3 class="experiencia-puesto">
-                    Atención al Cliente
-                </h3>
-
-                <div class="experiencia-meta">
-                    <span class="empresa">
-                        <strong>Empresa:</strong> El Corte Inglés
-                    </span>
-
-                    <span class="duracion">
-                        <strong>Duración:</strong> Diciembre 2023 - Enero 2024
-                    </span>
+                <div class="skill-card">
+                    <img src="src/img/JS.webp" class="icon" alt="" loading="lazy">
+                    <span>JavaScript</span>
                 </div>
 
-                <ul class="experiencia-lista">
-                    <li>
-                        Atención en caja durante campaña navideña, gestionando
-                        un alto volumen de clientes en periodos de máxima afluencia.
-                    </li>
+                <div class="skill-card">
+                    <img src="src/img/php.webp" class="icon" alt="" loading="lazy">
+                    <span>PHP</span>
+                </div>
 
-                    <li>
-                        Cobro de productos en caja, incluyendo pagos en efectivo,
-                        tarjeta y bonos o sistemas de pago especiales.
-                    </li>
-
-                    <!-- CONTENIDO OCULTO -->
-                    <li class="experience-more">
-                        Gestión de promociones y apoyo en venta cruzada,
-                        informando a los clientes sobre ofertas y productos
-                        destacados.
-                    </li>
-
-                    <li class="experience-more">
-                        Arqueo de caja y control de efectivo, realizando cierres,
-                        comprobación de saldos y solicitud de reposición de
-                        efectivo cuando era necesario.
-                    </li>
-
-                    <li class="experience-more">
-                        Soporte en diferentes secciones del centro, colaborando
-                        en tareas operativas según las necesidades del equipo.
-                    </li>
-
-                    <li class="experience-more">
-                        Organización y preparación de datos y operativa interna,
-                        asegurando el correcto flujo de información y apoyo
-                        administrativo básico.
-                    </li>
-                </ul>
-
-                <button class="experience-toggle" type="button">
-                    Ver más <i class="fa-solid fa-arrow-down-long"></i>
-                </button>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="skills">
-        <h2>Stack Tecnológico</h2>
-
-        <p class="skills-subtitle">
-            Tecnologías y herramientas con las que desarrollo aplicaciones web modernas.
-        </p>
-
-        <!-- Lenguajes -->
-        <h3 class="skills-category">Lenguajes de programación</h3>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <img src="src/img/html-5.webp" class="icon" alt="HTML">
-                <span>HTML5</span>
             </div>
 
-            <div class="skill-card">
-                <img src="src/img/CSS.webp" class="icon" alt="CSS">
-                <span>CSS3</span>
+            <!-- Frameworks y Librerías -->
+            <h3 class="skills-category">Frameworks y Librerías</h3>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <img src="src/img/react.webp" class="icon" alt="" loading="lazy">
+                    <span>React</span>
+                </div>
+
+                <div class="skill-card">
+                    <img src="src/img/vue.webp" class="icon" alt="" loading="lazy">
+                    <span>Vue.js</span>
+                </div>
+
+                <div class="skill-card">
+                    <img src="src/img/node.webp" class="icon" alt="" loading="lazy">
+                    <span>Node.js</span>
+                </div>
+
+                <div class="skill-card">
+                    <img src="src/img/Wordpress_Blue_logo.webp" class="icon" alt="" loading="lazy">
+                    <span>WordPress</span>
+                </div>
+
             </div>
 
-            <div class="skill-card">
-                <img src="src/img/JS.webp" class="icon" alt="JavaScript">
-                <span>JavaScript</span>
+            <!-- Bases de datos -->
+            <h3 class="skills-category">Bases de datos</h3>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <img src="src/img/postgreSQL.webp" class="icon" alt="" loading="lazy">
+                    <span>PostgreSQL</span>
+                </div>
+
+                <!--
+                <div class="skill-card">
+                    <img src="src/img/mysql.webp" class="icon" alt="" loading="lazy">
+                    <span>MySQL</span>
+                </div>
+                -->
+
             </div>
 
-            <div class="skill-card">
-                <img src="src/img/php.webp" class="icon" alt="PHP">
-                <span>PHP</span>
+            <!-- Herramientas -->
+            <h3 class="skills-category">Herramientas</h3>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <img src="src/img/icono-github.webp" class="icon" alt="" loading="lazy">
+                    <span>GitHub</span>
+                </div>
+
+                <div class="skill-card">
+                    <img src="src/img/Figma.webp" class="icon" alt="" loading="lazy">
+                    <span>Figma</span>
+                </div>
+
             </div>
 
-        </div>
+        </section>
 
-        <!-- Frameworks y Librerías -->
-        <h3 class="skills-category">Frameworks y Librerías</h3>
 
-        <div class="skills-grid">
+        <section id="proyectos" class="hidden">
+            <h2>Proyectos</h2>
 
-            <div class="skill-card">
-                <img src="src/img/react.webp" class="icon" alt="React">
-                <span>React</span>
+            <div class="filtros" role="group" aria-label="Filtrar proyectos">
+                <button type="button" data-filter="all" class="active" aria-pressed="true">Todos</button>
+                <button type="button" data-filter="frontend" aria-pressed="false">Frontend</button>
+                <button type="button" data-filter="backend" aria-pressed="false">Backend</button>
             </div>
 
-            <div class="skill-card">
-                <img src="src/img/vue.webp" class="icon" alt="Vue">
-                <span>Vue.js</span>
-            </div>
+            <div class="grid-proyectos">
 
-            <div class="skill-card">
-                <img src="src/img/node.webp" class="icon" alt="Node">
-                <span>Node.js</span>
-            </div>
+                <article class="proyecto" data-category="backend">
+                    <div class="proyecto-info">
+                        <img src="src/img/interniaHome.webp" alt="Página principal de Internia" class="proyecto-img"
+                            loading="lazy">
 
-            <div class="skill-card">
-                <img src="src/img/Wordpress_Blue_logo.webp" class="icon" alt="WordPress">
-                <span>WordPress</span>
-            </div>
+                        <h3 class="proyecto-titulo">Internia</h3>
 
-        </div>
+                        <p class="proyecto-stack">
+                            HTML · CSS · JS · NODE · VUE · POSTGRE SQL · SUPABASE · VERCEL
+                        </p>
 
-        <!-- Bases de datos -->
-        <h3 class="skills-category">Bases de datos</h3>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <img src="src/img/postgreSQL.webp" class="icon" alt="PostgreSQL">
-                <span>PostgreSQL</span>
-            </div>
-
-            <!-- Cuando aprendas MySQL puedes añadirlo -->
-            <!--
-        <div class="skill-card">
-            <img src="src/img/mysql.webp" class="icon" alt="MySQL">
-            <span>MySQL</span>
-        </div>
-        -->
-
-        </div>
-
-        <!-- Herramientas -->
-        <h3 class="skills-category">Herramientas</h3>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <img src="src/img/icono-github.webp" class="icon" alt="GitHub">
-                <span>GitHub</span>
-            </div>
-
-            <div class="skill-card">
-                <img src="src/img/Figma.webp" class="icon" alt="Figma">
-                <span>Figma</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section id="proyectos" class="hidden">
-        <h2>Proyectos</h2>
-
-        <div class="filtros">
-            <button data-filter="all">Todos</button>
-            <button data-filter="frontend">Frontend</button>
-            <button data-filter="backend">Backend</button>
-        </div>
-
-        <div class="grid-proyectos">
-    
-            <article class="proyecto" data-category="backend">
-                <div class="proyecto-info">
-                <img src="src/img/interniaHome.webp" alt="Página principal de Internia" class="proyecto-img">
-                
-                    <h3 class="proyecto-titulo">Internia</h3>
-
-                    <p class="proyecto-stack">
-                        HTML · CSS · JS · NODE · VUE · POSTGRE SQL · SUPABASE · VERCEL
-                    </p>
-
-                    <p class="proyecto-desc">
-                        Internia es una plataforma que centraliza la gestión de prácticas profesionales, facilitando la
-                        conexión entre estudiantes de Formación Profesional y centros educativos. Permite publicar,
-                        administrar y dar seguimiento a ofertas de prácticas de forma más eficiente y transparente.
-                    </p>
+                        <p class="proyecto-desc">
+                            Internia es una plataforma que centraliza la gestión de prácticas profesionales,
+                            facilitando la conexión entre estudiantes de Formación Profesional y centros educativos.
+                            Permite publicar, administrar y dar seguimiento a ofertas de prácticas de forma más
+                            eficiente y transparente.
+                        </p>
                     </div>
 
                     <div class="proyecto-links">
                         <a href="https://github.com/yenevielroberts/Internia-Plataforma-de-practicas-profesionales.git"
-                            class="proyecto-btn secondary"><i class="fa-solid fa-code"></i> Ver código</a>
-                        <a href="src/video/Internia.mp4" class="proyecto-btn"><i class="fa-solid fa-film"></i> Ver demo</a>
-                    
-                </div>
-            </article>
+                            class="proyecto-btn secondary" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-solid fa-code" aria-hidden="true"></i> Ver código</a>
+                        <a href="src/video/Internia.mp4" class="proyecto-btn" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-solid fa-film" aria-hidden="true"></i> Ver demo</a>
+                    </div>
+                </article>
 
-        <article class="proyecto" data-category="backend">
-            <div class="proyecto-info">
+                <article class="proyecto" data-category="backend">
+                    <div class="proyecto-info">
+                        <img src="src/img/Kntina.webp" alt="Página principal de Kntina" class="proyecto-img"
+                            loading="lazy">
 
-            <img src="src/img/Kntina.webp" alt="Página principal de Internia" class="proyecto-img">
-            
-                <h3 class="proyecto-titulo">Kntina</h3>
+                        <h3 class="proyecto-titulo">Kntina</h3>
 
-                <p class="proyecto-stack">
-                    HTML · CSS · JS · PHP · MySQL · Laravel
-                </p>
+                        <p class="proyecto-stack">
+                            HTML · CSS · JS · PHP · MySQL · Laravel
+                        </p>
 
-                <p class="proyecto-desc">
-                    Kntina es una página de ventas desarrollada con PHP y su propia API.
-                    Utiliza el framework Laravel, animaciones CSS y JavaScript
-                    para mejorar la experiencia de usuario.
-                </p>
-            
+                        <p class="proyecto-desc">
+                            Kntina es una página de ventas desarrollada con PHP y su propia API.
+                            Utiliza el framework Laravel, animaciones CSS y JavaScript
+                            para mejorar la experiencia de usuario.
+                        </p>
+                    </div>
+
+                    <div class="proyecto-links">
+                        <a href="https://github.com/ScarlettToala/Kntina.git" class="proyecto-btn secondary"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-code"
+                                aria-hidden="true"></i> Ver código</a>
+                        <a href="src/video/Kntina.mp4" class="proyecto-btn" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-solid fa-film" aria-hidden="true"></i> Ver demo</a>
+                    </div>
+                </article>
+
+                <article class="proyecto" data-category="frontend">
+                    <div class="proyecto-info">
+                        <img src="src/img/CatalogoDeAnimales.webp"
+                            alt="Pantalla principal de la aplicación de gestión de animales" class="proyecto-img"
+                            loading="lazy">
+
+                        <h3 class="proyecto-titulo">Aplicación de Gestión de Animales</h3>
+
+                        <p class="proyecto-stack">
+                            VUE · QUASAR · HTML · JS · CSS · NUXT 3 · DRIZZLE ORM · POSTGRE SQL
+                        </p>
+
+                        <p class="proyecto-desc">
+                            Una aplicación móvil y web completa para la gestión de animales. Utiliza Quasar en el
+                            frontend y Nuxt 3 en el backend, con Drizzle ORM para la base de datos.
+                        </p>
+                    </div>
+
+                    <div class="proyecto-links">
+                        <a href="https://github.com/ScarlettToala/Proyecto-Quasar-frontend--Nuxt-backend-.git"
+                            class="proyecto-btn secondary" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-solid fa-code" aria-hidden="true"></i> Ver código</a>
+                        <a href="src/video/CatalogoAnimales.mp4" class="proyecto-btn" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-solid fa-film" aria-hidden="true"></i> Ver demo</a>
+                    </div>
+                </article>
+
+                <article class="proyecto" data-category="frontend">
+                    <div class="proyecto-info">
+                        <img src="src/img/HundirLaFlota.png" alt="Página principal de Hundir la flota"
+                            class="proyecto-img" loading="lazy">
+
+                        <h3 class="proyecto-titulo">Hundir la flota</h3>
+
+                        <p class="proyecto-stack">
+                            HTML · CSS · JS · Node
+                        </p>
+
+                        <p class="proyecto-desc">
+                            Un clásico juego de Hundir la flota desarrollado con JavaScript y Node.js.
+                            Permite a un jugador enfrentarse a la IA en tiempo real.
+                        </p>
+                    </div>
+
+                    <div class="proyecto-links">
+                        <a href="https://github.com/ScarlettToala/Hundir-La-Flota-2.0.git"
+                            class="proyecto-btn secondary" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-solid fa-code" aria-hidden="true"></i> Ver código</a>
+                        <a href="src/video/HundirLaFlota.mp4" class="proyecto-btn" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-solid fa-film" aria-hidden="true"></i> Ver demo</a>
+                    </div>
+                </article>
+
+                <article class="proyecto" data-category="frontend">
+                    <div class="proyecto-info">
+                        <img src="src/img/silpaza.webp" alt="Página principal de Silpaza" class="proyecto-img"
+                            loading="lazy">
+
+                        <h3 class="proyecto-titulo">Silpaza</h3>
+
+                        <p class="proyecto-stack">
+                            HTML · TailwindCSS · JS · Node · REACT
+                        </p>
+
+                        <p class="proyecto-desc">
+                            Mi proyecto favorito: una tienda online llamada Silpaza, inspirada en un proyecto
+                            personal.
+                        </p>
+                    </div>
+
+                    <div class="proyecto-links">
+                        <a href="https://github.com/ScarlettToala/Silpaza.git" class="proyecto-btn secondary"
+                            target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-code"
+                                aria-hidden="true"></i> Ver código</a>
+                        <a href="src/video/Silpaza.mp4" class="proyecto-btn" target="_blank"
+                            rel="noopener noreferrer"><i class="fa-solid fa-film" aria-hidden="true"></i> Ver demo</a>
+                    </div>
+                </article>
+
             </div>
+        </section>
 
-                <div class="proyecto-links">
-                    <a href="https://github.com/ScarlettToala/Kntina.git"
-                        class="proyecto-btn secondary"><i class="fa-solid fa-code"></i> Ver código</a>
-                    <a href="src/video/Kntina.mp4" class="proyecto-btn"><i class="fa-solid fa-film"></i> Ver demo</a>
-                </div>
-            </article>
-        
+        <section id="contacto" class="hidden">
+            <h2>¿Hablamos?</h2>
 
-        <article class="proyecto" data-category="frontend">
-            <div class="proyecto-info">
-            <img src="src/img/CatalogoDeAnimales.webp" alt="Página principal de Internia" class="proyecto-img">
-
-            <h3 class="proyecto-titulo">Aplicación de Gestión de Animales</h3>
-
-            <p class="proyecto-stack">
-                VUE · HTML · JS · CSS · NUXT 3 · DRIZZLE ORM · POSTGRE SQL
-            </p>
-
-            <p class="proyecto-desc">
-                Una aplicación móvil y web completa para la gestión de animales. Utiliza Quasar en el frontend y
-                Nuxt 3 en el backend, con Drizzle ORM para la base de datos.
-            </p>
-
-            </div>
-
-            <div class="proyecto-links">
-                <a href="https://github.com/ScarlettToala/Proyecto-Quasar-frontend--Nuxt-backend-.git"
-                    class="proyecto-btn secondary"><i class="fa-solid fa-code"></i> Ver código</a>
-                <a href="src/video/CatalogoAnimales.mp4" class="proyecto-btn"><i class="fa-solid fa-film"></i> Ver demo</a>
-            </div>
-        </article>
-
-        <article class="proyecto" data-category="frontend">
-            <div class="proyecto-info">
-            <img src="src/img/HundirLaFlota.png" alt="Página principal de Hundir la flota" class="proyecto-img">
-            <h3 class="proyecto-titulo">Hundir la flota</h3>
-
-            <p class="proyecto-stack">
-                HTML · CSS · JS · Node
-            </p>
-
-            <p class="proyecto-desc">
-                Este es un juego clásico de Hundir la flota desarrollado con JavaScript y Node.js.
-                Permite a un jugador contra la IA enfrentarse en tiempo real.
-            </p>
-
-            </div>
-            <div class="proyecto-links">
-                <a href="https://github.com/ScarlettToala/Hundir-La-Flota-2.0.git" class="proyecto-btn secondary"><i class="fa-solid fa-code"></i> Ver código</a>
-                <a href="src/video/HundirLaFlota.mp4" class="proyecto-btn"><i class="fa-solid fa-film"></i> Ver demo</a>
-            </div>
-        </article>
-
-        <article class="proyecto" data-category="frontend">
-            <div class="proyecto-info">
-            <img src="src/img/silpaza.webp" alt="Página principal de Silpaza" class="proyecto-img">
-            <h3 class="proyecto-titulo">Silpaza</h3>
-
-
-            <p class="proyecto-stack">
-                HTML · TailwindCSS · JS · Node · REACT
-            </p>
-
-            <p class="proyecto-desc">
-                Este es mi proyecto favorito. Una tienda online llamada Silpaza. Inspirado en un proyecto personal.
-            </p>
-
-            </div>
-            <div class="proyecto-links">
-                <a href="https://github.com/ScarlettToala/Silpaza.git" class="proyecto-btn secondary"><i class="fa-solid fa-code"></i> Ver
-                    código</a>
-                <a href="src/video/Silpaza.mp4" class="proyecto-btn"><i class="fa-solid fa-film"></i> Ver demo</a>
-            </div>
-        </article>
-
-
-    </section>
-
-    <section id="contacto" class="hidden">
-        <h2>¿Hablamos?</h2>
-
-        <a href="mailto:sctoala@gmail.com" class="btn">
-            <img src="src/img/icono-correo.webp" alt="Dirección de correo" />
-            sctoala@gmail.com
-        </a>
-        <a href="https://github.com/ScarlettToala" class="btn" target="_blank">
-            <img src="src/img/icono-github.webp" alt="GitHub" />
-            Scarlett Toala
-        </a>
-
-        <a href="https://www.linkedin.com/in/scarletttoala/" class="btn" target="_blank">
-            <img src="src/img/icono-linkedin.png" alt="LinkedIn">
-            Scarlett Toala
-        </a>
-    </section>
-
-    <section class="section-cv" id="curriculum">
-
-        <h1 class="cv-title">Mi Currículum</h1>
-        <p class="cv-subtitle">Descárgalo o visualízalo directamente en la web</p>
-
-        <div class="cv-actions" role="toolbar" aria-label="Acciones del currículum">
-            <!-- Abrir en nueva pestaña -->
-            <a href="src/CV-ScarlettToala.pdf" id="verCurriculum" class="btn btn-primary" target="_blank"
-                rel="noopener noreferrer" aria-label="Ver currículum en nueva pestaña">
-                <i class="fa-solid fa-eye"></i> Ver CV
+            <a href="mailto:sctoala@gmail.com" class="btn">
+                <img src="src/img/icono-correo.webp" alt="Icono de correo" >
+                sctoala@gmail.com
+            </a>
+            <a href="https://github.com/ScarlettToala" class="btn" target="_blank" rel="noopener noreferrer">
+                <img src="src/img/icono-github.webp" alt="Icono de GitHub" >
+                Scarlett Toala
             </a>
 
-            <!-- Forzar descarga -->
-            <a href="src/CV-ScarlettToala.pdf" id="descargarCurriculum" class="btn btn-secondary"
-                download="CV-ScarlettToala.pdf" aria-label="Descargar currículum">
-                <i class="fa-solid fa-arrow-down-long"></i> Descargar CV
+            <a href="https://www.linkedin.com/in/scarletttoala/" class="btn" target="_blank"
+                rel="noopener noreferrer">
+                <img src="src/img/icono-linkedin.png" alt="Icono de LinkedIn">
+                Scarlett Toala 
             </a>
-        </div>
+        </section>
 
+        <section class="section-cv" id="curriculum">
 
-        <div class="cv-container" aria-live="polite">
-            <div class="cv-card">
-                <iframe src="src/CV-ScarlettToala.pdf" title="Currículum de ScarlettToala" class="cv-iframe"
-                    loading="lazy">
-                    <!-- Fallback -->
-                    <p>Tu navegador no soporta iframes. Puedes descargarlo
-                        <a href="src/CV-ScarlettToala.pdf">aquí</a>.
-                    </p>
-                </iframe>
+            <h2 class="cv-title">Mi Currículum</h2>
+            <p class="cv-subtitle">Descárgalo o visualízalo directamente en la web</p>
+
+            <div class="cv-actions" role="toolbar" aria-label="Acciones del currículum">
+                <!-- Abrir en nueva pestaña -->
+                <a href="src/CV-ScarlettToala.pdf" id="verCurriculum" class="btn btn-primary" target="_blank"
+                    rel="noopener noreferrer" aria-label="Ver currículum en nueva pestaña">
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i> Ver CV
+                </a>
+
+                <!-- Forzar descarga -->
+                <a href="src/CV-ScarlettToala.pdf" id="descargarCurriculum" class="btn btn-secondary"
+                    download="CV-ScarlettToala.pdf" aria-label="Descargar currículum">
+                    <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i> Descargar CV
+                </a>
             </div>
-            <p class="cv-note">Si el PDF no se muestra en móvil, usa el botón "Descargar CV" o ábrelo en el
-                navegador.</p>
-        </div>
-    </section>
+
+
+            <div class="cv-container">
+                <div class="cv-card">
+                    <iframe src="src/CV-ScarlettToala.pdf" title="Currículum de Scarlett Toala" class="cv-iframe"
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <p class="cv-note">Si el PDF n o se muestra en móvil, usa el botón "Descargar CV" o ábrelo en el
+                    navegador.</p>
+            </div>
+        </section>
+
+    </main>
+
     <footer>
         <p>
             © 2026 Scarlett Toala · Diseñado y desarrollado por mí 💜

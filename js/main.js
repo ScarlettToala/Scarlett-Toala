@@ -1,96 +1,105 @@
-// Scroll suave
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href'))
-            .scrollIntoView({ behavior: 'smooth' });
-    });
-});
 
-// Animaciones al hacer scroll
-const sections = document.querySelectorAll('.hidden');
+/* =========================================
+   Animaciones al hacer scroll
+========================================= */
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-});
+const seccionesOcultas = document.querySelectorAll('.hidden');
 
-sections.forEach(section => observer.observe(section));
-
-// Filtro de proyectos
-const botones = document.querySelectorAll('.filtros button');
-const proyectos = document.querySelectorAll('.proyecto');
-
-botones.forEach(boton => {
-    boton.addEventListener('click', () => {
-        const filtro = boton.dataset.filter;
-
-        proyectos.forEach(proyecto => {
-            if (filtro === 'all' || proyecto.dataset.category === filtro) {
-                proyecto.style.display = 'block';
-            } else {
-                proyecto.style.display = 'none';
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                obs.unobserve(entry.target); // ya no hace falta vigilarla
             }
         });
     });
-});
 
-//Menú hamrburguesa
-// Menú hamburguesa mejorado
-const toggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('.nav-menu');
+    seccionesOcultas.forEach(seccion => observer.observe(seccion));
+} else {
+    // Navegadores antiguos: mostrar todo directamente
+    seccionesOcultas.forEach(seccion => seccion.classList.add('show'));
+}
 
-toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('active');
-    toggle.classList.toggle('active');
-    toggle.textContent = isOpen ? '✕' : '☰';
-    toggle.setAttribute('aria-expanded', isOpen);
-});
 
-// Cerrar menú al hacer clic en un enlace
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        menu.classList.remove('active');
-        toggle.classList.remove('active');
-        toggle.textContent = '☰';
-        toggle.setAttribute('aria-expanded', 'false');
+/* =========================================
+   Filtro de proyectos
+========================================= */
+
+const botonesFiltro = document.querySelectorAll('.filtros button');
+const proyectos = document.querySelectorAll('.proyecto');
+
+botonesFiltro.forEach(boton => {
+    boton.addEventListener('click', () => {
+        const filtro = boton.dataset.filter;
+
+        // Estado activo del botón
+        botonesFiltro.forEach(b => {
+            const activo = b === boton;
+            b.classList.toggle('active', activo);
+            b.setAttribute('aria-pressed', String(activo));
+        });
+
+        // Mostrar / ocultar proyectos
+        proyectos.forEach(proyecto => {
+            const visible = filtro === 'all' || proyecto.dataset.category === filtro;
+            proyecto.style.display = visible ? '' : 'none';
+        });
     });
 });
 
-// Cerrar menú al hacer clic fuera
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('nav')) {
-        menu.classList.remove('active');
-        toggle.classList.remove('active');
-        toggle.textContent = '☰';
-        toggle.setAttribute('aria-expanded', 'false');
-    }
+
+/* =========================================
+   Menú hamburguesa
+========================================= */
+
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.nav-menu');
+
+function setMenu(abierto) {
+    menu.classList.toggle('active', abierto);
+    toggle.classList.toggle('active', abierto);
+    toggle.textContent = abierto ? '✕' : '☰';
+    toggle.setAttribute('aria-expanded', String(abierto));
+    toggle.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+}
+
+toggle.addEventListener('click', () => {
+    setMenu(!menu.classList.contains('active'));
 });
 
-const experienceButtons = document.querySelectorAll(".experience-toggle");
-
-experienceButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const card = button.closest(".experiencia-item");
-
-        // Guardamos la posición actual de la tarjeta
-        const cardTop = card.getBoundingClientRect().top + window.scrollY;
-
-        const moreItems = card.querySelectorAll(".experience-more");
-
-        const isOpen = card.classList.toggle("active");
-
-        moreItems.forEach((item) => {
-            item.style.display = isOpen ? "list-item" : "none";
-        });
-
-        button.innerHTML = isOpen
-            ? "Ver menos <i class='fa-solid fa-arrow-up-long'></i>"
-            : "Ver más <i class='fa-solid fa-arrow-down-long'></i>";
-    
-        });
+// Cerrar al hacer clic en un enlace
+menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setMenu(false));
 });
 
+// Cerrar al hacer clic fuera
+document.addEventListener('click', e => {
+    if (!e.target.closest('nav')) setMenu(false);
+});
+
+// Cerrar con Escape
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') setMenu(false);
+});
+
+
+/* =========================================
+   Experiencia: "Ver más / Ver menos"
+   (la visibilidad la controla el CSS con .active)
+========================================= */
+
+document.querySelectorAll('.experience-toggle').forEach(button => {
+    const card = button.closest('.experiencia-item');
+
+    button.setAttribute('aria-expanded', 'false');
+
+    button.addEventListener('click', () => {
+        const abierto = card.classList.toggle('active');
+
+        button.setAttribute('aria-expanded', String(abierto));
+        button.innerHTML = abierto
+            ? 'Ver menos <i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i>'
+            : 'Ver más <i class="fa-solid fa-arrow-down-long" aria-hidden="true"></i>';
+    });
+});
